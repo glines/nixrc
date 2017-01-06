@@ -61,4 +61,11 @@
 #    ipAddress = "192.168.0.1";
 #    prefixLength = 24;
 #  };
+
+#  # Ethernet bridge
+#  networking.bridges = {
+#    br0 = {
+#      interfaces = [ "enp0s31f6" "wlp4s0" ];
+#    };
+#  };
 }
