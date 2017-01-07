@@ -42,8 +42,12 @@ I use the `install.sh` script to start a new installation from scratch. The
 script is not perfect, but it attempts to identify computers I own and use the
 appropriate hostname.
 
-### Makefile / update.sh
-The `update.sh` script is interesting because whenever 
+### Makefile / rebuild.sh
+The `rebuild.sh` script is interesting because whenever nixrc changes are
+applied by this script, the entire repository is copied to the `/etc/nixos/`
+directory via the `rsync` utility. This is useful for keeping this Git
+repository in an un-privileged directory and then moving it to the appropriate
+privileged directory when needed.
 
 ## License
 As this repository does not really constitute a coherent product, I am
