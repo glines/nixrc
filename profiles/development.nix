@@ -73,8 +73,6 @@
     '';
   };
 
-  security.setuidPrograms = [ "mount_afp" ];
-
   # Enable core dump handling in systemd.
   systemd.coredump = {
     enable = false;

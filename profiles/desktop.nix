@@ -161,8 +161,8 @@
     # Enable dwm window manager.
 #    windowManager.default = "dwm";
 
-    desktopManager.kde4.enable = true;
-    displayManager.kdm.enable = true;
+    desktopManager.kde5.enable = true;
+    displayManager.auto.enable = true;
   };
 
 #  # Enable swc+velox (Wayland compositor) as alternative to X11
@@ -310,10 +310,10 @@
 #    st-wl = pkgs.callPackage ../pkgs/st-wl/default.nix { };
     ebview = pkgs.misc.debugVersion (pkgs.callPackage ../pkgs/ebview/default.nix { });
     libeb = pkgs.callPackage ../pkgs/libeb/default.nix { };
-    mesa_drivers = pkgs.pkgs.mesaDarwinOr (
-      let mo = pkgs.mesa_noglu.override {
-        llvmPackages = pkgs.llvmPackages_36;
-      };
-    in mo.drivers);
+#    mesa_drivers = pkgs.pkgs.mesaDarwinOr (
+#      let mo = pkgs.mesa_noglu.override {
+#        llvmPackages = pkgs.llvmPackages_36;
+#      };
+#    in mo.drivers);
   };
 }
