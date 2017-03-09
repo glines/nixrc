@@ -48,7 +48,7 @@ in
     zone = ec2-zone;
     accessKeyId = ec2-accessKeyId;  # symbolic name looked up in ~/.ec2-keys
     volumeType = "standard";
-    size = 10;
+    size = 30;  # GiB
   };
 
   dhaos =
@@ -62,10 +62,10 @@ in
         region = ec2-region;
         zone = ec2-zone;
         instanceType = "t2.micro";
-        ami = "ami-fb9dc3cb";
         keyPair = resources.ec2KeyPairs.auntie-key-pair;
         securityGroups = [ "allow-ssh" ];
         ebsBoot = true;  # only EBS-backed instances can mount EBS volumes at boot
+        ebsInitialRootDiskSize = 10;
       };
     };
     # map persistent storage for /home

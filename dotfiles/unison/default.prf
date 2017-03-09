@@ -12,3 +12,4 @@ ignore = Path work/cose/code/cluster_scripts/playbooks/skynet/site
 path = images
 path = finance
 path = school
+ignore = Path school/fall2016/igniteCS/recruiting/

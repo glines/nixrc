@@ -1,25 +1,32 @@
 servers = (
   {
     address = "irc.freenode.net";
+    port = "6697";
+    use_ssl = "yes";
+    ssl_verify = "yes";
     chatnet = "freenode";
     autoconnect = "Yes";
   },
 );
 
 chatnets = {
-  FreeNode = {
+  freenode = {
     type = "IRC";
-    autosendcmd = "MSG NickServ IDENTIFY 888yanksucks; /MODE nick -i";
+    sasl_username = "antiNeo";
+    sasl_password = "<password>";
+    sasl_mechanism = "PLAIN";
   };
 };
 
 channels = (
   { name = "#peltkore"; chatnet = "freenode"; autojoin = "Yes"; },
+  { name = "#nixos"; chatnet = "freenode"; autojoin = "Yes"; },
+  { name = "#dri-devel"; chatnet = "freenode"; autojoin = "Yes"; },
 );
 settings = {
   core = {
     real_name = "Jonathan Glines";
     user_name = "auntieNeo";
-    nick = "auntie";
+    nick = "glines";
   };
 };

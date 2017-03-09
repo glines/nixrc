@@ -79,7 +79,13 @@ rec {
       ln -fs ${./dotfiles/common} .common
       ln -fs ${./dotfiles/gitconfig} .gitconfig
       ln -fs ${./dotfiles/grconfig.json} .grconfig.json
-      ln -fsn ${./dotfiles/irssi} .irssi  # FIXME: as this directory is read-only, irssi can't write logs and such
+      # We make a configuration directory for irssi, but these files need to be
+      # editable by irssi so we do not use symlinks.
+      mkdir -p .irssi
+      ${pkgs.rsync}/bin/rsync --recursive --links --ignore-existing ${./dotfiles/irssi}/ .irssi/
+      chown -R auntieneo:auntieneo .irssi
+      find .irssi -type d -exec chmod 700 '{}' \;
+      find .irssi -type f -exec chmod 600 '{}' \;
       if [ ! -e .mailrc ]; then
         # FIXME: Change this when I figure out how to better store secrets
         cp ${./dotfiles/mailrc} .mailrc

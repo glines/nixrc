@@ -15,8 +15,8 @@
     allowUnfree = true;
     firefox = {
       jre = false;
-      enableGoogleTalkPlugin = true;
-      enableAdobeFlash = false;  # FIXME: Do I even care about Adobe flash?
+      enableGoogleTalkPlugin = false;
+      enableAdobeFlash = true;  # FIXME: Do I even care about Adobe flash?
     };
 #    chromium = {
 #      jre = true;
@@ -46,7 +46,7 @@
     }))
 #    ebview
     evince
-#    firefox
+    firefox
 #    freerdp
 # FIXME: fix freerdp:
 # ####### Building extension hunspell #######
@@ -122,8 +122,9 @@
   services.xserver = {
     # Enable the X11 windowing system.
     enable = true;
-    layout = "dvorak";
-    xkbOptions = "caps:hyper";
+    layout = "us";
+    xkbVariant = "dvorak";
+#    xkbOptions = "caps:hyper";
     enableCtrlAltBackspace = true;
 
 #    displayManager = {
@@ -161,8 +162,11 @@
     # Enable dwm window manager.
 #    windowManager.default = "dwm";
 
-    desktopManager.kde5.enable = true;
-    displayManager.auto.enable = true;
+    desktopManager.plasma5.enable = true;
+    displayManager.auto = {
+      enable = true;
+      user = "auntieneo";
+    };
   };
 
 #  # Enable swc+velox (Wayland compositor) as alternative to X11

@@ -26,6 +26,7 @@
 #    subversionClient
     valgrind
     vimPlugins.latex-box
+    vimPlugins.vim-auto-save
 #    vimPlugins.UltiSnips
 #    vimPlugins.YouCompleteMe  # YCM is blocking vim process, probably due to vim plugin architecture.
 #    afpfs-fuse

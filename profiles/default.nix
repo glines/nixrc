@@ -19,6 +19,7 @@
     idutils
     inetutils
     irssi
+    openssl  # Used with the irssinotifier script
     ledger
     links2
 #    mailutils
@@ -44,8 +45,7 @@
     tcpdump
     tmux
     tmuxinator
-#    unison
-    unison_2_40_102
+    unison
     unzip
     usbutils
     utillinuxCurses

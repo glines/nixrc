@@ -25,11 +25,15 @@
       ../profiles/virtualreality.nix
       ../profiles/steam.nix
       ../profiles/arduino.nix
+      ../profiles/kernel.nix
     ];
 
   # Use the efi boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Faster build times at the cost of possible race conditions
+  nix.buildCores = 4;
 
   # Enable the PCSC-Lite smart card reader daemon
   services.pcscd.enable = true;
